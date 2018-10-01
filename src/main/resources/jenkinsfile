@@ -1,0 +1,13 @@
+pipeline {
+stage 'build'
+node {
+    git 'https://github.com/suifeng1991/spring-boot.git'
+    withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
+              sh "mvn –Dmaven.test.failure.ignore=true clean package"
+              }
+     stash excludes: 'target/', includes: '**', name: 'source'
+     }
+
+}
+
+
