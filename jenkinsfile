@@ -5,18 +5,16 @@ stages {
     steps{
         sh "env"
     }
-
     }
     stage ('build'){
         steps {
             git 'https://github.com/suifeng1991/spring-boot.git'
-
             sh "mvn clean package"
-
             stash excludes: 'target/', includes: '**', name: 'source'
         }
+        steps{
+            sh "cp springboot-0.0.1-SNAPSHOT.jar /home/suifeng/springboot/"
         }
-
-
+        }
     }
 }
