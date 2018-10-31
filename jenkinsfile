@@ -12,9 +12,11 @@ stages {
             sh "mvn clean package"
             stash excludes: 'target/', includes: '**', name: 'source'
         }
+        }
+    stage('yidong'){
         steps{
-            sh "cp springboot-0.0.1-SNAPSHOT.jar /home/suifeng/springboot/"
-        }
-        }
+                    sh "cp springboot-0.0.1-SNAPSHOT.jar /home/suifeng/springboot/"
+                }
+    }
     }
 }
