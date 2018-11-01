@@ -15,7 +15,7 @@ stages {
         }
     stage('yidong'){
         steps{
-                    sh "cp /root/.jenkins/workspace/从项目中获取jenkinsfile/target/springboot-0.0.1-SNAPSHOT1.jar /home/suifeng/springboot/"
+                    sh "cp /root/.jenkins/workspace/从项目中获取jenkinsfile/target/springboot-0.0.1-SNAPSHOT.jar /home/suifeng/springboot/"
                 }
     }
     }
