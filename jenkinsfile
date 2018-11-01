@@ -27,7 +27,7 @@ stages {
                 echo 'i am success'
             }
             failure{
-                echo 'i am success'
+                echo 'i am failure'
             }
         }
 }
