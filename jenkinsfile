@@ -6,7 +6,7 @@ parameters {
 stages {
     stage('env.BRANCH_NAME'){
     steps{
-        sh "env"
+        echo  "hello ${params.PERSON}"
     }
     }
     stage ('build'){
