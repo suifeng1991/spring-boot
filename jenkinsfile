@@ -19,7 +19,9 @@ stages {
     }
     stage ('docker build'){
             steps {
+
                 sh "pwd"
+                sh "cp Dockerfile ./target/Dockerfile"
                 sh "docker build ./target -t springboot:rls2.0"
             }
             }
