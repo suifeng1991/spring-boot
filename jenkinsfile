@@ -21,14 +21,15 @@ stages {
             steps {
                 sh "pwd"
                 sh "cp Dockerfile ./target/Dockerfile"
-                dir('./')
+                dir('./'){
                 docker.build("springboot:rls2.0")
+                }
                 //sh "docker build ./target -t springboot:rls2.0"
             }
             }
     stage('yidong'){
         steps{
-
+            echo  "hello"
     }
     }
     post {
