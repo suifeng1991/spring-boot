@@ -23,7 +23,7 @@ stages {
                 sh "cp Dockerfile ./target/Dockerfile"
                 dir('./')
                 docker.build("springboot:rls2.0")
-//                sh "docker build ./target -t springboot:rls2.0"
+                //sh "docker build ./target -t springboot:rls2.0"
             }
             }
     stage('yidong'){
@@ -42,4 +42,5 @@ stages {
                 echo 'i am failure'
             }
         }
+    }
 }
