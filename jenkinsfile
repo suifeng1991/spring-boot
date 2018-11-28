@@ -3,8 +3,9 @@ agent any
 parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
+env.BRANCH_NAME = "suifeng"
 stages {
-    stage('env.BRANCH_NAME'){
+    stage('$BRANCH_NAME'){
     steps{
         echo  "hello ${params.PERSON}"
      }
