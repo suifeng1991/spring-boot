@@ -7,7 +7,7 @@ stages {
     stage('env.BRANCH_NAME'){
     steps{
         echo  "hello ${params.PERSON}"
-    }
+     }
     }
     stage ('build'){
         steps {
@@ -19,16 +19,16 @@ stages {
     }
     stage ('docker build'){
             steps {
-
                 sh "pwd"
                 sh "cp Dockerfile ./target/Dockerfile"
-                sh "docker build ./target -t springboot:rls2.0"
+                dir('./')
+                docker.build("springboot:rls2.0")
+//                sh "docker build ./target -t springboot:rls2.0"
             }
             }
     stage('yidong'){
         steps{
-                    sh "cp /root/.jenkins/workspace/从项目中获取jenkinsfile/target/springboot-0.0.1-SNAPSHOT.jar /home/suifeng/springboot/"
-                }
+
     }
     }
     post {
